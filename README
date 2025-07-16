@@ -1,1 +1,30 @@
-Placeholder
+# Sparktimize
+
+This repository demonstrates how to build a Docker image that installs
+packages from NVIDIA's PyPI repository and supports both `amd64` and
+`arm64` architectures.
+
+## Building
+
+Use Docker Buildx to create a multi-architecture image:
+
+```bash
+./build.sh
+```
+
+The script automatically creates and uses a Buildx builder named
+`multiarch-builder` and builds for `linux/amd64` and `linux/arm64`.
+
+## Dockerfile
+
+The provided `Dockerfile` installs `nvidia-pyindex` from the NVIDIA PyPI
+index:
+
+```Dockerfile
+FROM --platform=$TARGETPLATFORM python:3.10-slim
+RUN pip install -U pip \
+    && pip install --extra-index-url https://pypi.ngc.nvidia.com nvidia-pyindex
+```
+
+Build arguments `TARGETPLATFORM` and `BUILDPLATFORM` are used to ensure
+correct architecture handling when building.
