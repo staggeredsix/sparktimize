@@ -5,5 +5,8 @@ accelerate
 numpy
 pandas
 gradio
+# Optional quantization packages
+unsloth
+bitsandbytes
 # TensorRT-LLM is hosted on NVIDIA's index
 # Install with: pip install tensorrt-llm --extra-index-url https://pypi.nvidia.com/

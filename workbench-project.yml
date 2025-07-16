@@ -1,5 +1,5 @@
 name: Sparktimize
 image: nvidia/cuda:12.6.2-runtime-ubuntu22.04
 commands:
-  - pip install --no-cache-dir -r requirements.txt --extra-index-url https://pypi.nvidia.com/
+  - ./scripts/setup.sh
   - python app.py
