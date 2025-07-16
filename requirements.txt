@@ -1,0 +1,9 @@
+torch==2.7.0
+huggingface_hub
+transformers
+accelerate
+numpy
+pandas
+gradio
+# TensorRT-LLM is hosted on NVIDIA's index
+# Install with: pip install tensorrt-llm --extra-index-url https://pypi.nvidia.com/
