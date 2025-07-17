@@ -39,3 +39,19 @@ always available for every combination of CUDA and PyTorch. The `scripts/setup.s
 script automatically clones the official repository with all submodules and
 compiles it against the version of PyTorch installed from `requirements.txt`.
 When using `start_ui.sh` or the Docker image, this step runs automatically.
+
+## Troubleshooting
+
+If you encounter an error similar to:
+
+```
+ValueError: Converting from SentencePiece and Tiktoken failed, if a converter for SentencePiece is available, provide a model path with a SentencePiece tokenizer.model file. Currently available slow->fast converters: [...]
+```
+
+load the tokenizer with `use_fast=False`:
+
+```python
+tokenizer = AutoTokenizer.from_pretrained("<model>", use_fast=False)
+```
+
+The Gradio app has been updated to do this automatically.
