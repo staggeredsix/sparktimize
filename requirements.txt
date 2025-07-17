@@ -5,6 +5,9 @@ accelerate
 numpy
 pandas
 gradio
+# Additional dependencies for tokenization and serialization
+tiktoken
+protobuf
 # Optional quantization packages
 unsloth
 bitsandbytes
