@@ -15,11 +15,8 @@ This repository is intended for experimentation with NVIDIA Blackwell GPUs with 
 ## Quick start
 
 ```bash
-# Install dependencies from NVIDIA's PyPI
-./scripts/setup.sh
-
-# Run the Gradio interface
-python app.py
+# Install dependencies and launch the Gradio interface
+./start_ui.sh
 ```
 
 ### Quantize a vision language model
