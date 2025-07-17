@@ -50,8 +50,10 @@ def optimize(model_id, token, progress=gr.Progress()):
         progress(0.1, desc="Downloading model...")
         model_path = download_model(model_id, token)
         
-        progress(0.3, desc="Loading model and tokenizer...")
-        tokenizer = AutoTokenizer.from_pretrained(model_path)
+
+        progress(0.3, desc="⚡ Loading model and tokenizer...")
+        tokenizer = AutoTokenizer.from_pretrained(model_path, use_fast=False)
+
         model = AutoModelForCausalLM.from_pretrained(model_path, device_map="auto")
         
         progress(0.5, desc="Running baseline benchmark...")
