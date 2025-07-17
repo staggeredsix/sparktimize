@@ -31,3 +31,11 @@ python quantize_vlm.py --model-id my/model --token <HF_TOKEN> --method unsloth
 ## NVIDIA AI Workbench
 
 The `workbench-project.yml` file configures this repo as an NVIDIA AI Workbench project so it can be launched in a containerized environment with GPU access.
+
+## Building xformers from source
+
+`xformers` is required by some quantization tools but pre-built wheels are not
+always available for every combination of CUDA and PyTorch. The `scripts/setup.sh`
+script automatically clones the official repository with all submodules and
+compiles it against the version of PyTorch installed from `requirements.txt`.
+When using `start_ui.sh` or the Docker image, this step runs automatically.
