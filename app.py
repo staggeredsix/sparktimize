@@ -206,8 +206,9 @@ def main():
         # Header
         gr.HTML("""
         <div class="main-header">
-            <h1>SPARKTIMIZE</h1>
-            <p style="color: #76b900; font-size: 1.2em; margin: 0;">
+            <h1>⚡ SPARKTIMIZE</h1>
+            <p style="color: white; font-size: 1.2em; margin: 0;">
+
                 Powered by NVIDIA TensorRT-LLM | Accelerate Your AI Models
             </p>
         </div>
@@ -267,8 +268,10 @@ def main():
                 
                 output = gr.Markdown(
                     """
-                    <div style="text-align: center; padding: 40px; color: #888;">
-                        <h3>Ready to optimize your model</h3>
+
+                    <div style="text-align: center; padding: 40px; color: white;">
+                        <h3>🔍 Ready to optimize your model</h3>
+
                         <p>Enter your model details and click the optimize button to get started.</p>
                         <p><em>Powered by NVIDIA TensorRT-LLM on Blackwell Architecture</em></p>
                     </div>
