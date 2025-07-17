@@ -51,7 +51,7 @@ def optimize(model_id, token, progress=gr.Progress()):
         model_path = download_model(model_id, token)
         
         progress(0.3, desc="⚡ Loading model and tokenizer...")
-        tokenizer = AutoTokenizer.from_pretrained(model_path)
+        tokenizer = AutoTokenizer.from_pretrained(model_path, use_fast=False)
         model = AutoModelForCausalLM.from_pretrained(model_path, device_map="auto")
         
         progress(0.5, desc="📊 Running baseline benchmark...")
@@ -101,6 +101,7 @@ custom_css = """
 .gradio-container {
     background: linear-gradient(135deg, var(--nvidia-dark) 0%, var(--nvidia-gray) 100%);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
 }
 
 /* Header styling */
@@ -167,7 +168,7 @@ custom_css = """
 .footer-info {
     text-align: center;
     padding: 20px;
-    color: rgba(255, 255, 255, 0.7);
+    color: white;
     border-top: 1px solid rgba(118, 185, 0, 0.3);
     margin-top: 30px;
 }
@@ -207,7 +208,7 @@ def main():
         gr.HTML("""
         <div class="main-header">
             <h1>⚡ SPARKTIMIZE</h1>
-            <p style="color: #76b900; font-size: 1.2em; margin: 0;">
+            <p style="color: white; font-size: 1.2em; margin: 0;">
                 Powered by NVIDIA TensorRT-LLM | Accelerate Your AI Models
             </p>
         </div>
@@ -267,7 +268,7 @@ def main():
                 
                 output = gr.Markdown(
                     """
-                    <div style="text-align: center; padding: 40px; color: #888;">
+                    <div style="text-align: center; padding: 40px; color: white;">
                         <h3>🔍 Ready to optimize your model</h3>
                         <p>Enter your model details and click the optimize button to get started.</p>
                         <p><em>Powered by NVIDIA TensorRT-LLM on Blackwell Architecture</em></p>
